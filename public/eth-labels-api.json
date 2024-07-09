@@ -66,12 +66,12 @@
         }
       }
     },
-    "/labels/flipside": {
+    "/labels/walletlabels": {
       "get": {
-        "operationId": "getFlipsideLabels",
+        "operationId": "getWalletlabelsLabels",
         "responses": {
           "200": {
-            "description": "Successful response with Flipside labels data.",
+            "description": "Successful response with Walletlabels labels data.",
             "content": {
               "application/json": {
                 "schema": {
@@ -317,7 +317,7 @@
         }
       }
     },
-    "/labels/flipside/{address}": {
+    "/labels/walletlabels/{address}": {
       "get": {
         "parameters": [
           {
@@ -330,10 +330,10 @@
             "description": "Ethereum wallet address"
           }
         ],
-        "operationId": "getFlipsideLabelsByAddress",
+        "operationId": "getWalletlabelsLabelsByAddress",
         "responses": {
           "200": {
-            "description": "Successful response with Flipside labels data for a specific address.",
+            "description": "Successful response with Walletlabels labels data for a specific address.",
             "content": {
               "application/json": {
                 "schema": {
