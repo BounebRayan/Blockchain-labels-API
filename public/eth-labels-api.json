@@ -1,0 +1,537 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Eth WalletLabels API",
+    "description": "API for retrieving Ethereum wallet labels from different sources.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/labels/global": {
+      "get": {
+        "operationId": "getGlobalLabels",
+        "responses": {
+          "200": {
+            "description": "Successful response with global labels data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "ethereum"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Ethereum wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/labels/flipside": {
+      "get": {
+        "operationId": "getFlipsideLabels",
+        "responses": {
+          "200": {
+            "description": "Successful response with Flipside labels data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "ethereum"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Ethereum wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/labels/etherscan": {
+      "get": {
+        "operationId": "getEtherscanLabels",
+        "responses": {
+          "200": {
+            "description": "Successful response with Etherscan labels data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "ethereum"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Ethereum wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/labels/arkham": {
+      "get": {
+        "operationId": "getArkhamLabels",
+        "responses": {
+          "200": {
+            "description": "Successful response with Arkham labels data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "ethereum"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Ethereum wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/labels/global/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "description": "Ethereum wallet address"
+          }
+        ],
+        "operationId": "getGlobalLabelsByAddress",
+        "responses": {
+          "200": {
+            "description": "Successful response with global labels data for a specific address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "ethereum"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Ethereum wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/labels/flipside/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "description": "Ethereum wallet address"
+          }
+        ],
+        "operationId": "getFlipsideLabelsByAddress",
+        "responses": {
+          "200": {
+            "description": "Successful response with Flipside labels data for a specific address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "ethereum"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Ethereum wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                     "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/labels/etherscan/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "description": "Ethereum wallet address"
+          }
+        ],
+        "operationId": "getEtherscanLabelsByAddress",
+        "responses": {
+          "200": {
+            "description": "Successful response with Etherscan labels data for a specific address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "ethereum"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Ethereum wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },                      
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/labels/arkham/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "description": "Ethereum wallet address"
+          }
+        ],
+        "operationId": "getArkhamLabelsByAddress",
+        "responses": {
+          "200": {
+            "description": "Successful response with Arkham labels data for a specific address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "ethereum"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Ethereum wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
