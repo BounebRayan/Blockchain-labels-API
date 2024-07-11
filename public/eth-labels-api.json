@@ -8,16 +8,17 @@
   "tags": [
     {
       "name": "Ethereum",
-      "description": ""
+      "description": "Endpoints related to the Ethereum blockchain."
     },
     {
       "name": "Arbitrum",
-      "description": ""
+      "description": "Endpoints related to the Arbitrum blockchain."
     },
     {
       "name": "Solana",
-      "description": ""
-    }],
+      "description": "Endpoints related to the Solana blockchain."
+    }
+  ],
   "paths": {
     "/ethereum/global": {
       "get": {
