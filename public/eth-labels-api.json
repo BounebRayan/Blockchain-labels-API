@@ -1,14 +1,30 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Eth WalletLabels API",
-    "description": "API for retrieving Ethereum wallet labels from different sources.",
+    "title": "WalletLabels API",
+    "description": "API for retrieving wallet labels from different sources.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "Ethereum",
+      "description": ""
+    },
+    {
+      "name": "Arbitrum",
+      "description": ""
+    },
+    {
+      "name": "Solana",
+      "description": ""
+    }],
   "paths": {
-    "/labels/global": {
+    "/ethereum/global": {
       "get": {
         "operationId": "getGlobalLabels",
+        "tags": [
+          "Ethereum"
+        ],
         "responses": {
           "200": {
             "description": "Successful response with global labels data.",
@@ -66,9 +82,12 @@
         }
       }
     },
-    "/labels/walletlabels": {
+    "/ethereum/walletlabels": {
       "get": {
         "operationId": "getWalletlabelsLabels",
+        "tags": [
+          "Ethereum"
+        ],
         "responses": {
           "200": {
             "description": "Successful response with Walletlabels labels data.",
@@ -126,9 +145,12 @@
         }
       }
     },
-    "/labels/etherscan": {
+    "/ethereum/etherscan": {
       "get": {
         "operationId": "getEtherscanLabels",
+        "tags": [
+          "Ethereum"
+        ],
         "responses": {
           "200": {
             "description": "Successful response with Etherscan labels data.",
@@ -186,9 +208,12 @@
         }
       }
     },
-    "/labels/arkham": {
+    "/ethereum/arkham": {
       "get": {
         "operationId": "getArkhamLabels",
+        "tags": [
+          "Ethereum"
+        ],
         "responses": {
           "200": {
             "description": "Successful response with Arkham labels data.",
@@ -246,7 +271,7 @@
         }
       }
     },
-    "/labels/global/{address}": {
+    "/ethereum/global/{address}": {
       "get": {
         "parameters": [
           {
@@ -260,6 +285,9 @@
           }
         ],
         "operationId": "getGlobalLabelsByAddress",
+        "tags": [
+          "Ethereum"
+        ],
         "responses": {
           "200": {
             "description": "Successful response with global labels data for a specific address.",
@@ -317,7 +345,7 @@
         }
       }
     },
-    "/labels/walletlabels/{address}": {
+    "/ethereum/walletlabels/{address}": {
       "get": {
         "parameters": [
           {
@@ -331,6 +359,9 @@
           }
         ],
         "operationId": "getWalletlabelsLabelsByAddress",
+        "tags": [
+          "Ethereum"
+        ],
         "responses": {
           "200": {
             "description": "Successful response with Walletlabels labels data for a specific address.",
@@ -388,7 +419,7 @@
         }
       }
     },
-    "/labels/etherscan/{address}": {
+    "/ethereum/etherscan/{address}": {
       "get": {
         "parameters": [
           {
@@ -402,6 +433,9 @@
           }
         ],
         "operationId": "getEtherscanLabelsByAddress",
+        "tags": [
+          "Ethereum"
+        ],
         "responses": {
           "200": {
             "description": "Successful response with Etherscan labels data for a specific address.",
@@ -459,7 +493,7 @@
         }
       }
     },
-    "/labels/arkham/{address}": {
+    "/ethereum/arkham/{address}": {
       "get": {
         "parameters": [
           {
@@ -473,6 +507,9 @@
           }
         ],
         "operationId": "getArkhamLabelsByAddress",
+        "tags": [
+          "Ethereum"
+        ],
         "responses": {
           "200": {
             "description": "Successful response with Arkham labels data for a specific address.",
@@ -502,6 +539,280 @@
                         "description": "origin of the label"
                       },
                       "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/arbitrum/walletlabels": {
+      "get": {
+        "operationId": "getWalletlabelsLabelsArbitrum",
+        "tags": [
+          "Arbitrum"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with Walletlabels Arbitrum labels data .",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "ethereum"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Arbitrum wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/arbitrum/walletlabels/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "description": "Ethereum wallet address"
+          }
+        ],
+        "operationId": "getWalletlabelsLabelsByAddressArbitrum",
+        "tags": [
+          "Arbitrum"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with Walletlabels labels data for a specific Arbitrum address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "Arbitrum"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Arbitrum wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                     "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/solana/walletlabels": {
+      "get": {
+        "operationId": "getWalletlabelsLabelsSolana",
+        "tags": [
+          "Solana"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with Walletlabels Solana labels data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "Solana"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Solana wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/solana/walletlabels/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "description": "Solana wallet address"
+          }
+        ],
+        "operationId": "getWalletlabelsLabelsByAddressSolana",
+        "tags": [
+          "Solana"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with Walletlabels labels data for a specific Solana address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "Solana"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Solana wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                     "source": {
                         "type": "string",
                         "description": "Source of the label data"
                       },

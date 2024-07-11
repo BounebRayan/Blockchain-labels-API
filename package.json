@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google-cloud/bigquery": "^7.8.0",
+    "@scalar/api-reference-react": "^0.3.37",
     "@scalar/nextjs-api-reference": "^0.4.36",
     "@scalar/themes": "^0.9.13",
     "next": "14.2.4",
