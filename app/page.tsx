@@ -94,8 +94,8 @@ export default function Home() {
                 <td className="border border-gray-600 px-4 py-2 text-gray-300">This method verifies address ownership by conducting real transactions on the blockchain, ensuring the highest reliability and evidence-backed labeling.</td>
               </tr>
               <tr className="bg-gray-800">
-                <td className="border border-gray-600 px-4 py-2 text-gray-300">Research</td>
-                <td className="border border-gray-600 px-4 py-2 text-gray-300">Relying on careful research of information available to the public, this method enhances metadata gathering, especially during important industry events, to provide more context and detail to labeling efforts.</td>
+                <td className="border border-gray-600 px-4 py-2 text-gray-300">External</td>
+                <td className="border border-gray-600 px-4 py-2 text-gray-300">Generated from external parties that are available to general public - e.g like Twitter, Discord, Etherscan, etc.</td>
               </tr>
               <tr className="bg-gray-700">
                 <td className="border border-gray-600 px-4 py-2 text-gray-300">Heuristic</td>
