@@ -17,6 +17,14 @@
     {
       "name": "Solana",
       "description": "Endpoints related to the Solana blockchain."
+    },
+    {
+      "name": "Base",
+      "description": "Endpoints related to the Base blockchain."
+    },
+    {
+      "name": "Optimism",
+      "description": "Endpoints related to the Optimism blockchain."
     }
   ],
   "paths": {
@@ -788,6 +796,280 @@
         "responses": {
           "200": {
             "description": "Successful response with Walletlabels labels data for a specific Solana address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "Solana"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Solana wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                     "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/base": {
+      "get": {
+        "operationId": "getLabelsBase",
+        "tags": [
+          "Base"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with Base labels data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "Base"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Base wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/base/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "description": "base wallet address"
+          }
+        ],
+        "operationId": "getLabelsByAddressBase",
+        "tags": [
+          "Base"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with labels data for a specific Base address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "Base"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Base wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                     "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/optimism": {
+      "get": {
+        "operationId": "getLabelsOptimism",
+        "tags": [
+          "Optimism"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with Optimism labels data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockchain": {
+                        "type": "string",
+                        "description": "Optimism"
+                      },
+                      "address": {
+                        "type": "string",
+                        "description": "Optimism wallet address"
+                      },
+                      "address_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Nametag associated with the address"
+                      },
+                      "origin": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "origin of the label"
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Source of the label data"
+                      },
+                      "label_type": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Type of label"
+                      },
+                      "label_subtype": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Subtype of label"
+                      },
+                      "label": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "label(s) associated with the address"
+                      }
+                    },
+                    "required": ["address", "blockchain", "source","origin"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/optimism/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "name": "address",
+            "required": true,
+            "description": "Optimism wallet address"
+          }
+        ],
+        "operationId": "getLabelsByAddressOptimism",
+        "tags": [
+          "Optimism"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with labels data for a specific Optimism address.",
             "content": {
               "application/json": {
                 "schema": {
